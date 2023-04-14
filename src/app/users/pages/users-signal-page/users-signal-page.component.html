@@ -2,7 +2,7 @@
 
   <div class="col-12">
     <h1>Usuarios <small>- sin Señales (Tradicional)</small></h1>
-    <h2>Total de usuarios: {{ users.length }}</h2>
+    <h2>{{ labelTotalUsers() }}</h2>
     <hr>
   </div>
 
@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users">
+        <tr *ngFor="let user of users()">
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.first_name }}</td>
           <td>{{ user.last_name }}</td>
@@ -34,7 +34,7 @@
 </div>
 
 
-<button (click)="loadPage( currentPage + 1 )"
+<button (click)="loadPage( currentPage() + 1 )"
    class="btn btn-primary">
-  Cargar más - Página ({{ currentPage }})
+  Cargar más - Página ({{ currentPage() }})
 </button>
